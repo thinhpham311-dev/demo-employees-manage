@@ -34,6 +34,6 @@ The API is a dead basic node.js/express server. Clone the repo and run the follo
 - check its running by going to browser/postman
 
 ```
-localhost:7000/todos
+localhost3001/todos
 
 ```

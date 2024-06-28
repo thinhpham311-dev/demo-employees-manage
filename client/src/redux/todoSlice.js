@@ -4,7 +4,7 @@ import { nanoid } from 'nanoid';
 export const getTodosAsync = createAsyncThunk(
 	'todos/getTodosAsync',
 	async () => {
-		const resp = await fetch('http://localhost:7000/todos');
+		const resp = await fetch('http://localhost:3001/todos');
 		if (resp.ok) {
 			const todos = await resp.json();
 			return { todos };
@@ -15,7 +15,7 @@ export const getTodosAsync = createAsyncThunk(
 export const addTodoAsync = createAsyncThunk(
 	'todos/addTodoAsync',
 	async (payload) => {
-		const resp = await fetch('http://localhost:7000/todos', {
+		const resp = await fetch('http://localhost:3001/todos', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ export const addTodoAsync = createAsyncThunk(
 export const toggleCompleteAsync = createAsyncThunk(
 	'todos/completeTodoAsync',
 	async (payload) => {
-		const resp = await fetch(`http://localhost:7000/todos/${payload.id}`, {
+		const resp = await fetch(`http://localhost:3001/todos/${payload.id}`, {
 			method: 'PATCH',
 			headers: {
 				'Content-Type': 'application/json',
@@ -51,7 +51,7 @@ export const toggleCompleteAsync = createAsyncThunk(
 export const deleteTodoAsync = createAsyncThunk(
 	'todos/deleteTodoAsync',
 	async (payload) => {
-		const resp = await fetch(`http://localhost:7000/todos/${payload.id}`, {
+		const resp = await fetch(`http://localhost:3001/todos/${payload.id}`, {
 			method: 'DELETE',
 		});
 
